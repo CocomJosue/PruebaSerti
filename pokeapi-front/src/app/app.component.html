@@ -5,10 +5,36 @@
   <p>
     <mat-form-field appearance="outline">
       <mat-label>Escriba aquií...</mat-label>
-      <input matInput placeholder="Pikachu">
+      <input matInput placeholder="Pikachu" [(ngModel)]="busqueda">
       <mat-icon matSuffix>search</mat-icon>
       <mat-hint>Nombre o número del Pokémon</mat-hint>
     </mat-form-field>
   </p>
-  <button mat-raised-button color="primary">Buscar</button>
+  <button mat-raised-button color="primary" (click)="obtenerDatos()">Buscar</button>
+  <div *ngIf="pokemon != undefined" style="margin-top: 10vw;">
+    <mat-card style="padding: 3vw;">
+      <mat-card-content>
+        <h3 style="font-weight: bold; font-size: 3vw;">
+          {{pokemon.id}} | {{pokemon.name.toUpperCase()}}
+        </h3>
+        <mat-divider></mat-divider>
+        <p style="margin-block: 25px;">
+          <mat-form-field appearance="outline">
+            <mat-label>Peso</mat-label>
+            <input matInput [(ngModel)]="pokemon.weight" disabled>
+            <mat-icon matSuffix>scale</mat-icon>
+            <mat-hint>Esto es lo que pesa este pokemon</mat-hint>
+          </mat-form-field>
+        </p>
+        <p style="margin-block: 25px;">
+          <mat-form-field appearance="outline">
+            <mat-label>Altura</mat-label>
+            <input matInput [(ngModel)]="pokemon.height" disabled>
+            <mat-icon matSuffix>height</mat-icon>
+            <mat-hint>Esto es lo que mide este pokemon</mat-hint>
+          </mat-form-field>
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
