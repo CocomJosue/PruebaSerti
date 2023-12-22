@@ -2,10 +2,10 @@ package com.serti.spring.model;
 
 import javax.persistence.*;
 
-/*import java.time.LocalDate;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;*/
+import java.util.Set;
 
 @Table(name = "Pokemon")
 @Entity
@@ -19,13 +19,13 @@ public class Pokemon {
 	@Column
 	private int tamanio;
 	@Column
-	private int peso;/*
+	private int peso;
 	private String UsuarioCrea;
 	private LocalDate FechaCrea;
 	private String UsuarioEdita;
-	private LocalDate FechaEdita;*/
+	private LocalDate FechaEdita;
 	
-	/*@ManyToMany
+	@ManyToMany
 	@JoinTable(
 		name = "PokemonTipo",
 		joinColumns = @JoinColumn(name = "PokemonId"),
@@ -34,7 +34,7 @@ public class Pokemon {
 	private Set<Tipo> tipos = new HashSet<>();
 	
 	@OneToMany(mappedBy = "Pokemon", cascade = CascadeType.ALL)
-	private List<PokeAPI> pokeAPIs;*/
+	private List<PokeAPI> pokeAPIs;
 
 	//getters and setters
 	public Long getIdPokemon() {
@@ -69,7 +69,7 @@ public class Pokemon {
 		this.peso = peso;
 	}
 
-	/*public String getUsuarioCrea() {
+	public String getUsuarioCrea() {
 		return UsuarioCrea;
 	}
 
@@ -99,9 +99,9 @@ public class Pokemon {
 
 	public void setFechaEdita(LocalDate fechaEdita) {
 		FechaEdita = fechaEdita;
-	}*/
+	}
 
-	/*public Set<Tipo> getTipos() {
+	public Set<Tipo> getTipos() {
 		return tipos;
 	}
 
@@ -115,12 +115,12 @@ public class Pokemon {
 
 	public void setPokeAPIs(List<PokeAPI> pokeAPIs) {
 		this.pokeAPIs = pokeAPIs;
-	}*/
+	}
 
 	@Override
 	public String toString() {
 		return "Pokemon [IdPokemon=" + IdPokemon + ", Nombre=" + Nombre + ", tamanio=" + tamanio + ", peso=" + peso
-				+ ", UsuarioCrea=" /*+ UsuarioCrea + ", FechaCrea=" + FechaCrea + ", UsuarioEdita=" + UsuarioEdita
-				+ ", FechaEdita=" + FechaEdita /*+ ", tipos=" + tipos + ", pokeAPIs=" + pokeAPIs */+ "]";
+				+ ", UsuarioCrea=" + UsuarioCrea + ", FechaCrea=" + FechaCrea + ", UsuarioEdita=" + UsuarioEdita
+				+ ", FechaEdita=" + FechaEdita + ", tipos=" + tipos + ", pokeAPIs=" + pokeAPIs + "]";
 	}
 }
