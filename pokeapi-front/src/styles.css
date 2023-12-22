@@ -2,3 +2,13 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+    /* Ajusta la imagen de fondo y la posición según tus necesidades */
+    background: url('./assets/pokeon-wallpaper.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /* Establece la altura de la página */
+    height: 100vh;
+    margin: 0;
+    /* Agrega estilos adicionales según sea necesario */
+  }
